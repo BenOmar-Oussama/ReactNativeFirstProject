@@ -10,20 +10,21 @@ const RegularButton = (props: {
   buttonStyle?: StyleProp<ViewStyle>;
   borderRadius?: number;
   children: ReactNode;
+  color:string;
 }) => {
   return (
     <View
       style={{ borderRadius: props.borderRadius ?? 20, overflow: "hidden" }}
     >
       <Pressable
-        android_ripple={{ color: colors.white }}
+        android_ripple={{ color: colors.secondary }}
         style={[
           {
             alignItems: "center",
             justifyContent: "center",
             width: "100%",
             alignSelf: "center",
-            backgroundColor: colors.primary,
+            backgroundColor: colors.secondary,
             borderRadius: props.borderRadius ?? 20,
             elevation: 0,
             paddingVertical: 20,
@@ -33,7 +34,7 @@ const RegularButton = (props: {
         ]}
         onPress={props.onPress ?? function () {}}
       >
-        <RegularText>{props.children}</RegularText>
+        <RegularText textStyles={{color: props.color}}>{props.children}</RegularText>
       </Pressable>
     </View>
   );

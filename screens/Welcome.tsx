@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { colors } from "../Components/colors";
 import { container } from "../Components/shared";
 import RegularButton from "../Components/Buttons/RegularButton";
-import background from "../assets/backgrounds/background_v1.png";
+import background from "../assets/images/11593.jpg";
 import BigText from "../Components/text/bigText";
 import SmallText from "../Components/text/smalltext";
 import RegularText from "../Components/text/regularText";
@@ -36,7 +36,7 @@ const TopImage = styled.Image`
 
  `;
 
-const Welcome: FunctionComponent = () => {
+const Welcome: FunctionComponent = ({navigation}:any) => {
   return (
     <>
       <StatusBar style="light" />
@@ -44,15 +44,19 @@ const Welcome: FunctionComponent = () => {
         <TopSection>
           <TopImage source={background} />
         </TopSection>
-        <BottomSection>
+        <BottomSection style={{backgroundColor:"black"}}>
           <BigText
-            textStyles={{ width: "70%", marginBottom: 30, fontSize: 37 }}
+            textStyles={{ width: "70%", marginBottom: 50, fontSize: 37 }}
           >Best way to track your events 
           </BigText>
-          <SmallText textStyles={{ fontSize: 20, width: "70%" , paddingBottom:20}}>
+          <SmallText textStyles={{ fontSize: 20, width: "70%" , paddingBottom:40}}>
              Your portal to events in Al Akhwayn University!
           </SmallText>
-          <RegularButton buttonStyle = {{backgroundColor: colors.primary , paddingTop: 20}}>Proceed!</RegularButton>
+          <RegularButton color={colors.secondary}
+         onPress={ () => { 
+          console.log("Pressed");
+          navigation.navigate('Home');
+        } } buttonStyle = {{backgroundColor: colors.primary , paddingTop: 20} }>Proceed!</RegularButton>
           
         </BottomSection>
       </WelcomeContainer>

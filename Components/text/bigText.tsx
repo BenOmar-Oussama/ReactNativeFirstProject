@@ -13,7 +13,7 @@ const BigText = (props: {
           fontSize: 37,
           color: colors.white,
           textAlign: "left",
-          fontFamily: "Lato-Bold",
+          fontFamily: "BebasNeue-Regular",
         },
         props.textStyles,
       ]}
